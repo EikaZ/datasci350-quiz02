@@ -1,0 +1,12 @@
+{
+  "hash": "49b4a1cc0a4608f84b900f62e1a60f4c",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"Budget and Revenue\"\n---\n\n## Budget vs. Revenue\n\nThis page explores the relationship between film production budgets and worldwide revenues. \n@fig-budget shows the relationship using a scatter plot.\n\n::: {#cell-fig-budget .cell execution_count=1}\n``` {.python .cell-code}\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\nfilms = pd.read_csv(\"films.csv\")\n\nplt.scatter(films[\"budget_musd\"], films[\"revenue_musd\"])\nplt.xlabel(\"Budget\")\nplt.ylabel(\"Worldwide Revenue\")\nplt.title(\"Budget vs. Revenue\")\nplt.show()\n```\n\n::: {.cell-output .cell-output-display}\n![Film production budget vs. worldwide revenue](budget-revenue_files/figure-html/fig-budget-output-1.png){#fig-budget width=602 height=451}\n:::\n:::\n\n\n",
+    "supporting": [
+      "budget-revenue_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

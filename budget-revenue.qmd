@@ -1,0 +1,25 @@
+---
+title: "Budget and Revenue"
+---
+
+## Budget vs. Revenue
+
+This page explores the relationship between film production budgets and worldwide revenues. 
+@fig-budget shows the relationship using a scatter plot.
+
+```{python}
+#| label: fig-budget
+#| fig-cap: "Film production budget vs. worldwide revenue"
+#| echo: true
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+films = pd.read_csv("films.csv")
+
+plt.scatter(films["budget_musd"], films["revenue_musd"])
+plt.xlabel("Budget")
+plt.ylabel("Worldwide Revenue")
+plt.title("Budget vs. Revenue")
+plt.show()
+```

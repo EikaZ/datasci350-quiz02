@@ -1,0 +1,12 @@
+{
+  "hash": "a416f864879785644154e3ba06ad9bde",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"Runtime and Ratings\"\n---\n\n## Runtime vs. IMDb Rating\n\nThis page tries to discover the relationship between film runtime and IMDb ratings. \n@fig-runtime shows this relationship in a scatter plot.\n\n::: {#cell-fig-runtime .cell execution_count=1}\n``` {.python .cell-code}\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\nfilms = pd.read_csv(\"films.csv\")\n\nplt.scatter(films[\"runtime_min\"], films[\"imdb_rating\"])\nplt.xlabel(\"Runtime\")\nplt.ylabel(\"IMDb Rating\")\nplt.title(\"Runtime vs. IMDb Rating\")\nplt.show()\n```\n\n::: {.cell-output .cell-output-display}\n![Film runtime vs. IMDb rating](runtime-rating_files/figure-html/fig-runtime-output-1.png){#fig-runtime width=590 height=451}\n:::\n:::\n\n\n## Average Rating by Decade\n\n::: {#51e06df4 .cell execution_count=2}\n``` {.python .cell-code}\nfilms[\"decade\"] = films[\"year\"] // 10 * 10\nfilms.groupby(\"decade\")[\"imdb_rating\"].mean().round(2)\n```\n\n::: {.cell-output .cell-output-display execution_count=2}\n```\ndecade\n1980    8.01\n1990    7.70\n2000    7.94\n2010    7.83\n2020    7.44\nName: imdb_rating, dtype: float64\n```\n:::\n:::\n\n\n",
+    "supporting": [
+      "runtime-rating_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
